@@ -1,0 +1,43 @@
+
+<div *ngFor="let dataSet of data; index as itemId" class="portfolioContainer" [attr.id]='dataSet.title'>
+  <!-- Images are preloaded and hidden so that when the container is expanded, the images are already loaded -->
+  <img *ngFor="let picture of dataSet.content" alt="" src="{{picture}}" style="display: none" id="{{dataSet.title}}">
+
+  <!-- end comment -->
+    <div class="titleImg" [ngStyle]="{ 'background-image': 'url(\'' + dataSet.headerImg + '\')'}">
+      <h1>{{dataSet.title}}</h1>
+      <div class="float-right">
+        <button id="{{itemId}}" (click)="showContent(itemId)"><i class="fas fa-sort-down"></i></button>
+      </div>
+
+    </div>
+    <div *ngIf="show[itemId]" class="container" id="cont{{itemId}}">
+      <div class="gallery row">
+        <blockquote class="blockquote" style="">"{{dataSet.quote}}"</blockquote>
+        <img *ngFor="let picture of dataSet.content" data-toggle="modal" data-target="#modalImgContainer" (click)="toggleModal(picture)" src="{{picture}}" alt="" class="img-fluid col-sm-6 col-md-4 col-lg-3">
+
+      </div>
+    </div>
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalImgContainer" tabindex="-1" role="dialog" aria-labelledby="modalImgContainerTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div>
+          <img alt="" src="{{this.currentModalImg}}" width="100%" id="modalImg">
+
+          <i class="fas fa-chevron-left white float-left"  id="modalPrev" (click)="flipImages('previous')"></i>
+          <i class="fas fa-chevron-right white float-right" id="modalNext" (click)="flipImages('next')"></i>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

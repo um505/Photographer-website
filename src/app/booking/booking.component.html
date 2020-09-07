@@ -1,0 +1,19 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container d-flex justify-content-between mt-5 row">
+    <div *ngFor="let product of products" class="card col-md-4 col-sm-8" style="width: 18rem;">
+        <img class="card-img-top" src="{{ product.image }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <p class="card-text">{{ product.price | currency }}</p>
+
+            <button class="btn btn-primary" (click)="addToCart(product)">Choose option</button>
+        </div>
+    </div>
+</div>
+<br>
+<br>

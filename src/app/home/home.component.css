@@ -1,0 +1,49 @@
+
+*{
+font-size: 1.7vw;
+font-family: 'Poiret One', cursive;
+}
+
+hr{
+    width: 100%;
+    height: 3px;
+    background-color: #A76F3A;
+
+}
+
+a{
+    color: #A76F3A;
+}
+
+.award p{
+    font-size: 2em;
+    font-family: 'Poiret One', cursive;
+}
+
+
+
+.carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+.box{
+    background-color: #F6F7F5;
+}
+@media only screen and (max-width: 768px) {
+  .row{
+    justify-content: center;
+
+
+  }
+  .imageSmall{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}

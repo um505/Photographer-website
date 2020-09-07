@@ -1,0 +1,19 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container d-flex justify-content-between">
+    <div *ngFor="let item of items" class="card cart-item" style="width: 18rem;">
+        <img class="card-img-top" src="{{ item.image }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-text">{{ item.description }}</p>
+            <p class="card-text">{{ item.price | currency }}</p>
+
+           
+        </div>
+    </div>
+</div>
+<br>
+<br>

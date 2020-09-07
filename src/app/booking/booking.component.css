@@ -1,0 +1,14 @@
+@media only screen and (max-width: 768px) {
+  .row{
+    justify-content: center !important;
+    margin: auto;
+  }
+  .col-sm-8{
+    margin-bottom: 1em;
+
+  }
+
+
+
+
+}
